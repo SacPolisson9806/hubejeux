@@ -28,17 +28,24 @@
       sprite: selectedCar
     };
 
-    // Fonction pour dessiner la voiture du joueur
+    // Fonction pour dessiner une voiture
     function drawCar(obj) {
       const img = new Image();
       img.src = obj.sprite;
       ctx.drawImage(img, obj.x, obj.y, obj.width, obj.height);
     }
 
-    // Fonction pour dessiner les obstacles (rectangles rouges)
-    function drawRect(obj) {
-      ctx.fillStyle = obj.color;
-      ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
+    // Liste des sprites ennemis
+    const enemyImages = [
+      'voitureenemieimage/car1.png',
+      'voitureenemieimage/car2.png',
+      'voitureenemieimage/car3.png',
+      'voitureenemieimage/car4.png'
+    ];
+
+    function getRandomEnemyImage() {
+      const index = Math.floor(Math.random() * enemyImages.length);
+      return enemyImages[index];
     }
 
     let obstacles = [];
@@ -47,11 +54,32 @@
     let isGameOver = false;
 
     function spawnObstacle() {
-      if (!isGameOver) {
-        const x = Math.random() * (canvas.width - 40);
-        obstacles.push({ x, y: -80, width: 40, height: 80, color: "red" });
-      }
-    }
+  if (isGameOver) return;
+
+  const count = Math.floor(Math.random() * 3) + 1; // 1 à 3 voitures
+  const minGap = 50; // distance minimale entre deux voitures
+  const positions = [];
+
+  while (positions.length < count) {
+    const x = Math.floor(Math.random() * (canvas.width - 40));
+
+    // Vérifie que la position ne chevauche pas une autre
+    const tooClose = positions.some(px => Math.abs(px - x) < minGap);
+    if (!tooClose) positions.push(x);
+  }
+
+  positions.forEach(x => {
+    obstacles.push({
+      x,
+      y: -80,
+      width: 40,
+      height: 80,
+      sprite: getRandomEnemyImage()
+    });
+  });
+}
+
+
 
     function handleCollision() {
       isGameOver = true;
@@ -73,7 +101,7 @@
 
       obstacles.forEach((obs, i) => {
         obs.y += speed;
-        drawRect(obs);
+        drawCar(obs);
 
         if (
           obs.x < player.x + player.width &&

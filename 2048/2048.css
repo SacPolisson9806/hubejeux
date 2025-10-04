@@ -1,3 +1,10 @@
+/* === Reset global === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* === Fond général === */
 body {
   background: linear-gradient(to bottom, #d8f6ff, #b0e0f0);
@@ -6,8 +13,10 @@ body {
   text-align: center;
   padding: 40px;
   overflow-x: hidden;
+  border: none;
 }
 
+/* === Titres et paragraphes === */
 h1 {
   font-size: 36px;
   margin-bottom: 10px;
@@ -19,6 +28,7 @@ p {
   margin-bottom: 20px;
 }
 
+/* === Formulaires === */
 select, button {
   padding: 10px 15px;
   font-size: 16px;
@@ -33,6 +43,37 @@ select, button {
 
 button:hover, select:hover {
   background-color: #26c6da;
+}
+
+/* === Bouton retour === */
+.retour {
+  display: block;
+  margin: 40px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #01c8fa;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.retour:hover {
+  background-color: #e53935;
+}
+
+/* === Section règles === */
+#rules {
+  text-align: center;
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /* === Grille === */
@@ -50,7 +91,6 @@ button:hover, select:hover {
   max-width: calc(var(--size) * 80px + (var(--size) - 1) * 14px + 28px);
   width: fit-content;
 }
-
 
 /* === Case vide (invisible mais structurelle) === */
 .cell {
@@ -143,6 +183,8 @@ button:hover, select:hover {
   opacity: 0.3;
   pointer-events: none;
 }
+
+/* === Popup de fin de partie === */
 .popup {
   position: fixed;
   top: 0; left: 0;
@@ -185,4 +227,3 @@ button:hover, select:hover {
 .hidden {
   display: none;
 }
-

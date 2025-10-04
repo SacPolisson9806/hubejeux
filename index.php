@@ -19,9 +19,21 @@
     </div>
 
     <div class="game-card">
+      <h2>Cemantix</h2>
+      <p>Trouve le mot secret en t'aidant des mot donner </p>
+      <a href="cemantix/cemantix.php" class="btn">Jouer</a>
+    </div>
+
+    <div class="game-card">
       <h2>pendu</h2>
       <p>Trouver le mot secret.</p>
       <a href="jeuxpendu/jeuxpendu.php" class="btn">Jouer</a>
+    </div>
+
+    <div class="game-card">
+      <h2>Codecracker</h2>
+       <p>Devine le code secret à 4 chiffres !</p>
+      <a href="codecracker/codecrackerindex.php" class="btn">Jouer</a>
     </div>
 
     <div class="game-card">
