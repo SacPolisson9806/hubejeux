@@ -1,0 +1,100 @@
+/* Reset simple */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corps de page */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: #0c00f6;
+  color: white;
+  padding: 40px 0;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Main / Hub des jeux */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 20px;
+  gap: 30px;
+}
+
+.game-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+}
+
+.game-card h2 {
+  margin-bottom: 10px;
+  color: #0c00f6;
+}
+
+.game-card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Boutons */
+.btn, button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0c00f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover, button:hover {
+  background: #0c00f6;
+}
+
+/* Input des jeux */
+input {
+  padding: 10px;
+  font-size: 18px;
+  width: 80px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Message des jeux */
+#message {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  margin-top: 50px;
+}
