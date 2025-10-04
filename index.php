@@ -19,6 +19,12 @@
     </div>
 
     <div class="game-card">
+      <h2>Arrow Rush</h2>
+      <p>Suis le rythme des fleches!</p>
+      <a href="arrowrush/arrowrushaccueil.php" class="btn">Jouer</a>
+    </div>
+
+    <div class="game-card">
       <h2>Cemantix</h2>
       <p>Trouve le mot secret en t'aidant des mot donner </p>
       <a href="cemantix/cemantix.php" class="btn">Jouer</a>
